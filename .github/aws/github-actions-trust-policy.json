@@ -6,13 +6,19 @@
       "Principal": {
         "Federated": "arn:aws:iam::041863017448:oidc-provider/token.actions.githubusercontent.com"
       },
-      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Action": [
+        "sts:AssumeRoleWithWebIdentity",
+        "sts:TagSession"
+      ],
       "Condition": {
         "StringEquals": {
           "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
         },
         "StringLike": {
-          "token.actions.githubusercontent.com:sub": "repo:ralexandre-albuquerque/barber-manager:*"
+          "token.actions.githubusercontent.com:sub": [
+            "repo:ralexandre-albuquerque/barber-manager:*",
+            "repo:ralexandre-albuquerque@*/barber-manager@*:*"
+          ]
         }
       }
     }

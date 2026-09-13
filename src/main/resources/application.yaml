@@ -17,4 +17,8 @@ spring:
     properties:
         hibernate:
           format_sql: true
-          
+
+
+jwt:
+  secret: "barber-manager-estudo-chave-jwt-32bytes-min"
+  expiration-ms: 86400000

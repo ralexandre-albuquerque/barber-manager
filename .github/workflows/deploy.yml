@@ -1,8 +1,8 @@
-name: Build and Push to ECR
+name: Develop - Build and Push to ECR
 
 on:
   push:
-    branches: [ main ]
+    branches: [ develop ]
 
 permissions:
   id-token: write
